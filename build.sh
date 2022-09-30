@@ -1,0 +1,5 @@
+(cd cra && npm run build)
+(cd next && npm run build)
+(cd no-cra && npm run build)
+(cd no-react && npm run build)
+(cd no-typescript && npm run build)

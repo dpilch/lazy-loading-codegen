@@ -1,0 +1,5 @@
+(cd cra && npm install typescript@$1)
+(cd next && npm install typescript@$1)
+(cd no-cra && npm install typescript@$1)
+(cd no-react && npm install typescript@$1)
+(cd no-typescript && npm install typescript@$1)
