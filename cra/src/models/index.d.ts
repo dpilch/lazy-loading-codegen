@@ -1,6 +1,6 @@
 import { ModelInit, MutableModel } from "@aws-amplify/datastore";
 // @ts-ignore
-import { LazyLoading, AsyncCollection, AsyncItem } from "@aws-amplify/datastore";
+import { LazyLoading, LazyLoadingDisabled, AsyncCollection, AsyncItem } from "@aws-amplify/datastore";
 
 type BlogMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
@@ -18,57 +18,53 @@ type RatingMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
-class EagerBlog {
+type EagerBlog = {
   readonly id: string;
   readonly name: string;
   readonly posts?: (Post | null)[] | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
-  
 }
 
-class LazyBlog {
+type LazyBlog = {
   readonly id: string;
   readonly name: string;
   readonly posts: AsyncCollection<Post>;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
-  
 }
 
-export declare type Blog = LazyLoading extends undefined ? EagerBlog : LazyBlog
+export declare type Blog = LazyLoading extends LazyLoadingDisabled ? EagerBlog : LazyBlog
 
 export declare const Blog: (new (init: ModelInit<Blog, BlogMetaData>) => Blog) & Blog & {
-  static copyOf(source: Blog, mutator: (draft: MutableModel<Blog, BlogMetaData>) => MutableModel<Blog, BlogMetaData> | void): Blog;
+  copyOf(source: Blog, mutator: (draft: MutableModel<Blog, BlogMetaData>) => MutableModel<Blog, BlogMetaData> | void): Blog;
 }
 
-class EagerPost {
+type EagerPost = {
   readonly id: string;
   readonly title: string;
   readonly blog?: Blog | null;
   readonly comments?: (Comment | null)[] | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
-  
 }
 
-class LazyPost {
+type LazyPost = {
   readonly id: string;
   readonly title: string;
   readonly blog: AsyncItem<Blog | undefined>;
   readonly comments: AsyncCollection<Comment>;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
-  
 }
 
-export declare type Post = LazyLoading extends undefined ? EagerPost : LazyPost
+export declare type Post = LazyLoading extends LazyLoadingDisabled ? EagerPost : LazyPost
 
 export declare const Post: (new (init: ModelInit<Post, PostMetaData>) => Post) & Post & {
-  static copyOf(source: Post, mutator: (draft: MutableModel<Post, PostMetaData>) => MutableModel<Post, PostMetaData> | void): Post;
+  copyOf(source: Post, mutator: (draft: MutableModel<Post, PostMetaData>) => MutableModel<Post, PostMetaData> | void): Post;
 }
 
-class EagerComment {
+type EagerComment = {
   readonly id: string;
   readonly post?: Post | null;
   readonly content: string;
@@ -76,10 +72,9 @@ class EagerComment {
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   readonly commentRatingId?: string | null;
-  
 }
 
-class LazyComment {
+type LazyComment = {
   readonly id: string;
   readonly post: AsyncItem<Post | undefined>;
   readonly content: string;
@@ -87,35 +82,32 @@ class LazyComment {
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   readonly commentRatingId?: string | null;
-  
 }
 
-export declare type Comment = LazyLoading extends undefined ? EagerComment : LazyComment
+export declare type Comment = LazyLoading extends LazyLoadingDisabled ? EagerComment : LazyComment
 
 export declare const Comment: (new (init: ModelInit<Comment, CommentMetaData>) => Comment) & Comment & {
-  static copyOf(source: Comment, mutator: (draft: MutableModel<Comment, CommentMetaData>) => MutableModel<Comment, CommentMetaData> | void): Comment;
+  copyOf(source: Comment, mutator: (draft: MutableModel<Comment, CommentMetaData>) => MutableModel<Comment, CommentMetaData> | void): Comment;
 }
 
-class EagerRating {
+type EagerRating = {
   readonly id: string;
   readonly score?: number | null;
   readonly comment?: Comment | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
-  
 }
 
-class LazyRating {
+type LazyRating = {
   readonly id: string;
   readonly score?: number | null;
   readonly comment: AsyncItem<Comment | undefined>;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
-  
 }
 
-export declare type Rating = LazyLoading extends undefined ? EagerRating : LazyRating
+export declare type Rating = LazyLoading extends LazyLoadingDisabled ? EagerRating : LazyRating
 
 export declare const Rating: (new (init: ModelInit<Rating, RatingMetaData>) => Rating) & Rating & {
-  static copyOf(source: Rating, mutator: (draft: MutableModel<Rating, RatingMetaData>) => MutableModel<Rating, RatingMetaData> | void): Rating;
+  copyOf(source: Rating, mutator: (draft: MutableModel<Rating, RatingMetaData>) => MutableModel<Rating, RatingMetaData> | void): Rating;
 }
