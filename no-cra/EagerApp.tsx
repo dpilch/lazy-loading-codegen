@@ -67,11 +67,13 @@ function App() {
 
   async function deleteAll() {
     try {
+        /*
       await DataStore.delete(Post, p => p.title.ne('some random title i wouldnt use'));
       await DataStore.delete(Post, p => p.title.eq(''));
       await DataStore.delete(Blog, b => b.name.eq(''));
       await DataStore.delete(Blog, b => b.name.eq('test'));
       await DataStore.delete(Blog, b => b.name.eq("some random name i wouldnt use"));
+         */
     } catch (error) {
       console.log(error);
     }

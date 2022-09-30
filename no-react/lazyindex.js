@@ -1,39 +1,18 @@
 import { DataStore } from "aws-amplify";
-// import { AsyncCollection } from "@aws-amplify/datastore";
 import { Blog, Post, Comment } from "./models";
-// 
-// async function createBlog() {
-//   try {
-//     const blog: Blog = await DataStore.save(
-//       new Blog({
-//           name,
-//       })
-//     );
-//     const post = await DataStore.save(
-//       new Post({
-//         title: name + 'post',
-//         blog,
-//       }),
-//     );
-//     const comment = await DataStore.save(
-//       new Comment({
-//         content: name + 'comment',
-//         post
-//       }),
-//     );
-//     // const p: number = blog.posts;
-//     const p: (Post | null)[] | null | undefined = blog.posts;
-//     // const p2: Post[] = blog.other;
-//     // const p: AsyncCollection<Post> = blog.posts;
-//     // const post1 = (await p.toArray())[0];
-//     // const b: AsyncItem<Blog | undefined> = post1.blog;
-//     // new AsyncItem<Blog>(() => {});
-//     // console.log(p);
-//     // console.log(b);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
+const name = '';
+const blog = await DataStore.save(new Blog({
+    name,
+}));
+const post = await DataStore.save(new Post({
+    title: name + 'post',
+    blog,
+}));
+const comment = await DataStore.save(new Comment({
+    content: name + 'comment',
+    post
+}));
+const p = blog.posts;
 // 
 // async function getBlogs() {
 //   try {
@@ -75,3 +54,4 @@ import { Blog, Post, Comment } from "./models";
 //   }
 // 
 // }
+//# sourceMappingURL=lazyindex.js.map

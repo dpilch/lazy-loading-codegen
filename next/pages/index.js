@@ -4,7 +4,6 @@ import styles from '../styles/Home.module.css'
 import { Blog } from '../src/models/';
 
 export default function Home() {
-    console.log(Blog);
   return (
     <div className={styles.container}>
       <Head>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button, TextField } from "@aws-amplify/ui-react";
 import { DataStore } from "aws-amplify";
+import { AsyncCollection } from "@aws-amplify/datastore";
 import { Blog, Post, Comment } from "./models";
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
           post
         }),
       );
-      const p: (Post | null)[] | null | undefined = blog.posts;
+      const p: AsyncCollection<Post> = blog.posts;
     } catch (error) {
       console.log(error);
     }
@@ -67,11 +68,13 @@ function App() {
 
   async function deleteAll() {
     try {
+        /*
       await DataStore.delete(Post, p => p.title.ne('some random title i wouldnt use'));
       await DataStore.delete(Post, p => p.title.eq(''));
       await DataStore.delete(Blog, b => b.name.eq(''));
       await DataStore.delete(Blog, b => b.name.eq('test'));
       await DataStore.delete(Blog, b => b.name.eq("some random name i wouldnt use"));
+         */
     } catch (error) {
       console.log(error);
     }
