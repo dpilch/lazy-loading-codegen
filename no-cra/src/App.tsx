@@ -34,7 +34,7 @@ function App() {
         }),
       );
       // const p: number = blog.posts;
-      const p: (Post | null)[] | null | undefined = blog.posts;
+      // const p: (Post | null)[] | null | undefined = blog.posts;
       // const p2: Post[] = blog.other;
       // const p: AsyncCollection<Post> = blog.posts;
       // const post1 = (await p.toArray())[0];

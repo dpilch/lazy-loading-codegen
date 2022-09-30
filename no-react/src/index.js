@@ -19,14 +19,6 @@ export {};
 //         post
 //       }),
 //     );
-//     /*
-//     await DataStore.save(
-//       new Rating({
-//         score: 4,
-//         comment,
-//       })
-//     );
-//      */
 //     // const p: number = blog.posts;
 //     const p: (Post | null)[] | null | undefined = blog.posts;
 //     // const p2: Post[] = blog.other;
@@ -61,20 +53,11 @@ export {};
 // async function getComments() {
 //   try {
 //     const c = await DataStore.query(Comment);
-//     console.log(c.map(comment => comment.rating));
 //   } catch (error) {
 //     console.log(error);
 //   }
 // }
 // 
-// async function getRatings() {
-//   try {
-//     const r = await DataStore.query(Rating);
-//     console.log(r.map(rating => rating.comment));
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
 // 
 // async function deleteAll() {
 //   try {

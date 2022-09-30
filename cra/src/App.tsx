@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button, TextField } from "@aws-amplify/ui-react";
 import { DataStore } from "aws-amplify";
-import { AsyncCollection } from "@aws-amplify/datastore";
+// import { AsyncCollection } from "@aws-amplify/datastore";
 import { Blog, Post, Comment } from "./models";
 
 function App() {
@@ -33,9 +33,10 @@ function App() {
           post
         }),
       );
+      const p: (Post | null)[] | null | undefined = blog.posts;
       // const p: (Post | null)[] | null | undefined = blog.posts;
       // const p2: Post[] = blog.other;
-      const p: AsyncCollection<Post> = blog.posts;
+      // const p: AsyncCollection<Post> = blog.posts;
       // const post1 = (await p.toArray())[0];
       // const b: AsyncItem<Blog | undefined> = post1.blog;
       // new AsyncItem<Blog>(() => {});
