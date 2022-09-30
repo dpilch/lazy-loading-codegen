@@ -1,5 +1,4 @@
 import { DataStore } from "aws-amplify";
-// import { AsyncCollection } from "@aws-amplify/datastore";
 import { Blog, Post, Comment } from "./models";
 const name = '';
 const blog: Blog = await DataStore.save(
