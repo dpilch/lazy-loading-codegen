@@ -1,5 +1,5 @@
 (cd cra && npm unlink --no-save aws-amplify @aws-amplify/core @aws-amplify/datastore @aws-amplify/auth @aws-amplify/ui-components @aws-amplify/api @aws-amplify/api-graphql && cp EagerApp.tsx src/App.tsx)
-(cd next && npm unlink --no-save aws-amplify @aws-amplify/core @aws-amplify/datastore @aws-amplify/auth @aws-amplify/ui-components @aws-amplify/api @aws-amplify/api-graphql)
+(cd next && npm unlink --no-save aws-amplify @aws-amplify/core @aws-amplify/datastore @aws-amplify/auth @aws-amplify/ui-components @aws-amplify/api @aws-amplify/api-graphql && eagerindex.tsx pages/index.tsx)
 (cd no-cra && npm unlink --no-save aws-amplify @aws-amplify/core @aws-amplify/datastore @aws-amplify/auth @aws-amplify/ui-components @aws-amplify/api @aws-amplify/api-graphql && cp EagerApp.tsx src/App.tsx)
 (cd no-react && npm unlink --no-save aws-amplify @aws-amplify/core @aws-amplify/datastore @aws-amplify/auth @aws-amplify/ui-components @aws-amplify/api @aws-amplify/api-graphql && cp eagerindex.ts src/index.ts)
 (cd no-typescript && npm unlink --no-save aws-amplify @aws-amplify/core @aws-amplify/datastore @aws-amplify/auth @aws-amplify/ui-components @aws-amplify/api @aws-amplify/api-graphql)
