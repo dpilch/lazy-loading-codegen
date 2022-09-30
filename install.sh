@@ -1,0 +1,5 @@
+(cd cra && npm install)
+(cd next && npm install)
+(cd no-cra && npm install)
+(cd no-react && npm install)
+(cd no-typescript && npm install)
