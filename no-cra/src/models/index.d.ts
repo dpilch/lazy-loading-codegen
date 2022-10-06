@@ -36,7 +36,7 @@ type LazyBlog = {
 
 export declare type Blog = LazyLoading extends LazyLoadingDisabled ? EagerBlog : LazyBlog
 
-export declare const Blog: (new (init: ModelInit<Blog, BlogMetaData>) => Blog) & Blog & {
+export declare const Blog: (new (init: ModelInit<Blog, BlogMetaData>) => Blog) & {
   copyOf(source: Blog, mutator: (draft: MutableModel<Blog, BlogMetaData>) => MutableModel<Blog, BlogMetaData> | void): Blog;
 }
 
@@ -60,7 +60,7 @@ type LazyPost = {
 
 export declare type Post = LazyLoading extends LazyLoadingDisabled ? EagerPost : LazyPost
 
-export declare const Post: (new (init: ModelInit<Post, PostMetaData>) => Post) & Post & {
+export declare const Post: (new (init: ModelInit<Post, PostMetaData>) => Post) & {
   copyOf(source: Post, mutator: (draft: MutableModel<Post, PostMetaData>) => MutableModel<Post, PostMetaData> | void): Post;
 }
 
@@ -86,7 +86,7 @@ type LazyComment = {
 
 export declare type Comment = LazyLoading extends LazyLoadingDisabled ? EagerComment : LazyComment
 
-export declare const Comment: (new (init: ModelInit<Comment, CommentMetaData>) => Comment) & Comment & {
+export declare const Comment: (new (init: ModelInit<Comment, CommentMetaData>) => Comment) & {
   copyOf(source: Comment, mutator: (draft: MutableModel<Comment, CommentMetaData>) => MutableModel<Comment, CommentMetaData> | void): Comment;
 }
 
@@ -108,6 +108,6 @@ type LazyRating = {
 
 export declare type Rating = LazyLoading extends LazyLoadingDisabled ? EagerRating : LazyRating
 
-export declare const Rating: (new (init: ModelInit<Rating, RatingMetaData>) => Rating) & Rating & {
+export declare const Rating: (new (init: ModelInit<Rating, RatingMetaData>) => Rating) & {
   copyOf(source: Rating, mutator: (draft: MutableModel<Rating, RatingMetaData>) => MutableModel<Rating, RatingMetaData> | void): Rating;
 }
